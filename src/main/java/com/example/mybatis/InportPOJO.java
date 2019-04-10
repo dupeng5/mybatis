@@ -4,11 +4,11 @@ import com.example.mybatis.view.entity.ArchitectureStaticData;
 
 import java.text.SimpleDateFormat;
 
-public class InportClass {
+public class InportPOJO {
     private String name;
     private String id;
     private String age;
-    public InportClass(){
+    public InportPOJO(){
         this.name = "123" ;
         this.id = "123";
         this.age = "123";

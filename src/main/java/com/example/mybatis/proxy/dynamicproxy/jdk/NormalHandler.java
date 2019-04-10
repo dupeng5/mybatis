@@ -1,40 +1,40 @@
-package com.example.mybatis.proxy.dynamicproxy;
+package com.example.mybatis.proxy.dynamicproxy.jdk;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
+ * 动态接口类代理
  * @Author: dupeng5
- * @Date: 2019/4/10 10:17
+ * @Date: 2019/4/9 17:40
  * @Version 1.0
  */
-public class InsprProxy implements InvocationHandler {
-
-    private Object subject;
-    public InsprProxy(Object subject){
-        this.subject =subject;
-    }
+public class NormalHandler implements InvocationHandler {
+//    private T t;
+//    public NormalHandler(T t){
+//        this.t = t;
+//    }
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("调用开始");
         if("getAge".equals(method.getName())){
             System.out.println("这里是getAge方法"+String.valueOf(args[0]));
-
-            return method.invoke(subject,args);
+//            return method.invoke(t,args);
         }
         if("getNumber".equals(method.getName())){
             System.out.println("这里是getNumber方法"+String.valueOf(args[0]));
-            return method.invoke(subject,args);
+//            return method.invoke(t,args);
         }
         System.out.println("调用结束");
         return null;
     }
 
-    public static  Object getNewProxy(Object t){
-        ClassLoader load = t.getClass().getClassLoader();
-        Class<?>[] interfaces =t.getClass().getInterfaces();
-        InsprProxy a = new InsprProxy(t);
-        return  Proxy.newProxyInstance(load, interfaces, a);
+    public static  <T>T getNewProxy(Class<T> t){
+        ClassLoader load = t.getClassLoader();
+        Class<?>[] interfaces =new Class<?>[]{t};
+        NormalHandler a = new NormalHandler();
+        return (T) Proxy.newProxyInstance(load, interfaces, a);
     }
+
 }

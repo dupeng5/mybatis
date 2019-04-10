@@ -1,4 +1,4 @@
-package com.example.mybatis;
+package com.example.mybatis.util;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
@@ -10,7 +10,10 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * mybatis 代码生成工具类
+ *
+ * */
 public class AutoGeneratorHelper {
     //数据库url
     public static final String URL="jdbc:oracle:thin:@20.26.11.9:1521:CSIBM02";
