@@ -1,22 +1,28 @@
-package com.example.mybatis.util;
+package com.example.mybatis.common;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
+import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
+import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
+import java.util.ArrayList;
+import java.util.List;
 /**
  * mybatis 代码生成工具类
  *
  * */
-public class MysqlAutoGeneratorHelper {
+public class AutoGeneratorHelper {
     //数据库url
-    public static final String URL="jdbc:mysql://127.0.0.1:3306/mybatis?serverTimezone=GMT%2B8";
+    public static final String URL="jdbc:oracle:thin:@20.26.11.9:1521:CSIBM02";
     //数据库驱动
-    public static final String DRIVER_NAME="com.mysql.cj.jdbc.Driver";
+    public static final String DRIVER_NAME="oracle.jdbc.driver.OracleDriver";
     //数据库账号
-    public static final String USER_NAME="mysql";
+    public static final String USER_NAME="aiam";
     //数据库密码
-    public static final String PASSWORD="mysql";
+    public static final String PASSWORD="aiam_123";
     //包路径
     public static final String PACKAGE_PATH="com.example.mybatis";
     //author
@@ -24,7 +30,7 @@ public class MysqlAutoGeneratorHelper {
     //模块名
     public static final String MODULES_NAME="view";
     //表名
-    public static final String TABLE_NAME="bs_static_data";
+    public static final String TABLE_NAME="ARCHITECTURE_STATIC_DATA";
     /**
      * RUN THIS
      */
