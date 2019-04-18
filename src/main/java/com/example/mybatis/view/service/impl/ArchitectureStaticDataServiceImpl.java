@@ -4,7 +4,10 @@ import com.example.mybatis.view.entity.ArchitectureStaticData;
 import com.example.mybatis.view.mapper.ArchitectureStaticDataMapper;
 import com.example.mybatis.view.service.IArchitectureStaticDataService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +19,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ArchitectureStaticDataServiceImpl extends ServiceImpl<ArchitectureStaticDataMapper, ArchitectureStaticData> implements IArchitectureStaticDataService {
-
+    @Cacheable(value="staticDATA")
+    @Override
+    public List<ArchitectureStaticData> findAll() {
+        return selectList(null);
+    }
 }

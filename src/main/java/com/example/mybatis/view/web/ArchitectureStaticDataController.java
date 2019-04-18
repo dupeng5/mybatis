@@ -27,10 +27,7 @@ public class ArchitectureStaticDataController {
     private IArchitectureStaticDataService iArchitectureStaticDataService;
     @RequestMapping("/findAll")
     public List<ArchitectureStaticData> find(){
-        EntityWrapper<ArchitectureStaticData> queryWrapper = new EntityWrapper<>();
-//        queryWrapper.setSqlSelect("","")
-//        iArchitectureStaticDataService.selectList()
-        return null;
+        return iArchitectureStaticDataService.findAll();
     }
 }
 

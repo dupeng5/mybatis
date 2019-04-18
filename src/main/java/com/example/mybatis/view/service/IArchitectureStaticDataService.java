@@ -3,6 +3,8 @@ package com.example.mybatis.view.service;
 import com.example.mybatis.view.entity.ArchitectureStaticData;
 import com.baomidou.mybatisplus.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -12,5 +14,7 @@ import com.baomidou.mybatisplus.service.IService;
  * @since 2019-04-04
  */
 public interface IArchitectureStaticDataService extends IService<ArchitectureStaticData> {
+
+    public List<ArchitectureStaticData> findAll();
 
 }
