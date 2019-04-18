@@ -1,23 +1,33 @@
 server.port: 8081
+
+
+#mvc配置
+mvc:
+  view:
+    prefix: /
+    suffix: .html
+
 spring:
   #数据库配置
   datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    #driver-class-name: net.sf.log4jdbc.DriverSpy
-    url: jdbc:oracle:thin:@20.26.11.9:1521:CSIBM02
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+    driver-class-name: net.sf.log4jdbc.DriverSpy
+    url: jdbc:log4jdbc:oracle:thin:@20.26.11.9:1521:CSIBM02
     username: aiam
     password: aiam_123
+  #redis 缓存配置
   redis:
     cluster:
       nodes: 192.168.23.134:7001,192.168.23.134:7001,192.168.23.134:7002,192.168.23.134:7003,192.168.23.134:7004,192.168.23.134:7005,192.168.23.134:7006
-    database: 0
+      max-redirects: 6
     password: redis
-    rool:
-      max-active: 8
-      max-idle: 8
-      max-wait: -1
-      min-idle: 0
-    timeout:  5000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: 5s
+        min-idle: 1
+    timeout:  5s
 #mybatis配置
 mybatis-plus:
 # mapper-locations: classpath:/mapper/*.xml
@@ -32,8 +42,12 @@ mybatis-plus:
       logic-delete-value: 0
       logic-not-delete-value: 1
       db-type: oracle
-    refresh: false
+    refresh-mapper: false
   configuration:
       map-underscore-to-camel-case: true
       cache-enabled: false
       jdbc-type-for-null: 'null'
+
+#指定日志配置文件
+logging:
+  config: classpath:logback-dev.xml
