@@ -17,4 +17,7 @@ public interface IArchitectureStaticDataService extends IService<ArchitectureSta
 
     public List<ArchitectureStaticData> findAll();
 
+    public List<ArchitectureStaticData> findByType(String type);
+
+    public List<ArchitectureStaticData> findByValue(String type);
 }

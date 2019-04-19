@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.example.mybatis.view.entity.ArchitectureStaticData;
 import com.example.mybatis.view.service.IArchitectureStaticDataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -25,9 +26,17 @@ import java.util.List;
 public class ArchitectureStaticDataController {
     @Autowired
     private IArchitectureStaticDataService iArchitectureStaticDataService;
-    @RequestMapping("/findAll")
+    @GetMapping("/findAll")
     public List<ArchitectureStaticData> find(){
         return iArchitectureStaticDataService.findAll();
+    }
+    @GetMapping("/findByType")
+    public List<ArchitectureStaticData> findByType(String type){
+        return iArchitectureStaticDataService.findByType(type);
+    }
+    @GetMapping("/findByValue")
+    public List<ArchitectureStaticData> findByValue(String value){
+        return iArchitectureStaticDataService.findByValue(value);
     }
 }
 
