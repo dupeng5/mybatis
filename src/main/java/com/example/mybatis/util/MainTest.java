@@ -26,7 +26,7 @@ public class MainTest {
             if(value!=null){
                 map.put(str,++value);
             } else {
-                map.put(str,0);
+                map.put(str,1);
             }
         }
         map.forEach((c,d)->{

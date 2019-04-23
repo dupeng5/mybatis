@@ -1,9 +1,6 @@
-package com.example.mybatis;
+package com.example.mybatis.util;
 
 import org.springframework.web.client.RestTemplate;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 
 public class BeanTest {

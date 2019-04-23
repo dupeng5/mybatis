@@ -16,6 +16,8 @@ public class MyThread extends Thread {
     }
     @Override
     public void run() {
-        System.out.println("主动创建的第"+selfNum+"个线程");
+//        Thread.currentThread().setName("selfNum:"+selfNum);
+        System.out.println(String.valueOf(Thread.currentThread().getName())+"主动创建的第"+selfNum+"个线程");
+
     }
 }
