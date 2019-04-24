@@ -1,0 +1,17 @@
+#home环境
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      profile: dev
+      label: master
+  application:
+    name: application
+#公共环境
+#spring.profiles.active=andev
+
+#生产环境
+#spring.profiles.active=prod
+
