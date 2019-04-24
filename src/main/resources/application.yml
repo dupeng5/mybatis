@@ -1,4 +1,4 @@
-#home环境
+#home鐜
 server:
   port: 8081
 spring:
@@ -9,9 +9,9 @@ spring:
       label: master
   application:
     name: application
-#公共环境
+#鍏叡鐜
 #spring.profiles.active=andev
 
-#生产环境
+#鐢熶骇鐜
 #spring.profiles.active=prod
 
