@@ -5,6 +5,7 @@ import com.example.mybatis.view.entity.ArchitectureStaticData;
 import com.example.mybatis.view.mapper.ArchitectureStaticDataMapper;
 import com.example.mybatis.view.service.IArchitectureStaticDataService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -38,5 +39,16 @@ public class ArchitectureStaticDataServiceImpl extends ServiceImpl<ArchitectureS
         EntityWrapper<ArchitectureStaticData> entityWrapper = new EntityWrapper();
         entityWrapper.eq("CODE_VALUE",type);
         return this.selectList(entityWrapper);
+    }
+    @CacheEvict(value="staticTypeData",allEntries=true)
+    @Override
+    public Boolean insertValue(Long id,String name,String type, String value){
+        ArchitectureStaticData insert = new ArchitectureStaticData();
+        insert.setDataId(id);
+        insert.setCodeName(name);
+        insert.setCodeType(type);
+        insert.setCodeValue(value);
+        Boolean bce = insert(insert);
+        return bce;
     }
 }

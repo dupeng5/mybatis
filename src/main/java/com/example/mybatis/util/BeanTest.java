@@ -6,11 +6,9 @@ import org.springframework.web.client.RestTemplate;
 public class BeanTest {
 
     public static void main(String[] args){
-        try{
-           BeanTest beanTest = new BeanTest();
-           new Thread(beanTest.new Runtest()).start();
-        }catch(Exception e){
-        }
+        String a = "a"+"b";
+        String b = "ab";
+        System.out.println(a==b);
     }
 
     public class Runtest implements Runnable {

@@ -1,5 +1,8 @@
 package com.example.mybatis.thread;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+
+import java.util.Arrays;
 import java.util.concurrent.FutureTask;
 
 /**
@@ -8,18 +11,10 @@ import java.util.concurrent.FutureTask;
  * @Version 1.0
  */
 public class MainTest {
-    public static void main(String[] args)throws InterruptedException{
+    public static void main(String[] args)throws InterruptedException {
         //Thread
-
-            Thread a = new MyThread();
-            Thread b = new MyThread();
-            Thread c = new MyThread();
-            a.start();
-            a.interrupt();
-            a.join();
-            b.start();
-            b.join();
-            c.start();
+        String c = null;
+        c.length();
 
         //Runable
 //        MyRunable myRunable = new MyRunable();

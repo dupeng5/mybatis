@@ -7,6 +7,7 @@ import com.example.mybatis.view.entity.ArchitectureStaticData;
 import com.example.mybatis.view.service.IArchitectureStaticDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -37,6 +38,10 @@ public class ArchitectureStaticDataController {
     @GetMapping("/findByValue")
     public List<ArchitectureStaticData> findByValue(String value){
         return iArchitectureStaticDataService.findByValue(value);
+    }
+    @PostMapping("/insertValue")
+    public Boolean insertValue(Long id,String name,String type, String value){
+        return iArchitectureStaticDataService.insertValue(id,name,type,value);
     }
 }
 

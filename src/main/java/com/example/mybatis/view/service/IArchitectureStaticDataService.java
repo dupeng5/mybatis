@@ -20,4 +20,6 @@ public interface IArchitectureStaticDataService extends IService<ArchitectureSta
     public List<ArchitectureStaticData> findByType(String type);
 
     public List<ArchitectureStaticData> findByValue(String type);
+
+    public Boolean insertValue(Long id,String name,String type, String value);
 }
