@@ -25,6 +25,5 @@ public class MainTest {
 //        FutureTask<String> futureTask = new FutureTask<>(myCallable);
 //        Thread callthread = new Thread(futureTask);
 //        callthread.start();
-
     }
 }
